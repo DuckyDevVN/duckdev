@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-image: linear-gradient(60deg, #c9def4, #f5ccd4, #b8a4c9);
+  position: relative;
+}
+
+#nav {
+  position: fixed;
+  width: 100%;
+  height: 70px;
+  border-bottom: 3px solid white;
+  box-shadow: 0 0 10px 10px rgba(255, 255, 255, 0.781);
+  background-image: linear-gradient(60deg, #f5ccd4, #b8a4c9);
+  display: flex;
+  justify-content: space-between;
+  user-select: none;
+  transition: 0.5s;
+  z-index: 999;
+}
+
+#nav.active {
+  height: 350px;
+}
+
+#nav .nav--home {
+  overflow: hidden;
+}
+
+#nav .nav--home .nav--logo {
+  position: relative;
+  width: auto;
+  height: 70px;
+  font-size: 20px;
+  color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Press Start 2P';
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.808);
+}
+
+#nav .nav--home .nav--items {
+  font-family: 'Pacifico';
+  padding: 0 20px;
+}
+
+#nav .nav--home .nav--items p {
+  height: auto;
+  margin-bottom: 15px;
+  color: white;
+  font-size: 20px;
+  transition: 0.25s linear;
+  cursor: pointer;
+}
+
+#nav .nav--home .nav--items p:hover {
+  color: white;
+}
+
+#nav .nav--home .nav--items .active {
+  color: white;
+}
+
+
+
+#nav .nav--toggle {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#nav .nav--toggle::before {
+  content: '';
+  position: absolute;
+  width: 37px;
+  height: 3px;
+  background-color: white;
+  transform: translateY(-10px);
+  box-shadow: 0 10px white;
+  transition: 0.5s;
+}
+
+#nav .nav--toggle::after {
+  content: '';
+  position: absolute;
+  width: 37px;
+  height: 3px;
+  background-color: white;
+  transform: translateY(10px);
+  transition: 0.5s;
+}
+
+#nav.active .nav--toggle::before {
+  transform: translateY(0px) rotate(45deg);
+  box-shadow: 50px 10px rgba(255, 255, 255, 0);
+  background-color: white;
+}
+
+#nav.active .nav--toggle::after {
+  transform: translateY(0px) rotate(-45deg);
+  background-color: white;
+}
+
+#home {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  height: auto;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#home .box--info {
+  position: relative;
+  width: 400px;
+  height: 400px;
+}
+
+#home .box--info .home--avatar--box {
+  width: 300px;
+  height: 300px;
+  border-radius: 8px;
+  position: absolute;
+  background-color: black;
+  overflow: hidden;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+#home .box--info .home--avatar--box::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 300px;
+  height: 300px;
+  background-image: linear-gradient(0deg, transparent, white, white);
+  transform-origin: bottom right;
+  animation: animate 6s linear infinite;
+}
+
+#home .box--info .home--avatar--box::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 300px;
+  height: 300px;
+  background-image: linear-gradient(0deg, transparent, white, white);
+  transform-origin: bottom right;
+  animation: animate 6s linear infinite;
+  animation-delay: -3s;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#home .box--info .home--avatar--box .home--avatar {
+  position: absolute;
+  inset: 5px;
+  z-index: 10;
+  border-radius: 8px;
+  background-image: url(./img/image.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: center;
+}
+
+#home .box--decription .title {
+  font-family: 'Kaushan Script';
+  font-size: 50px;
+  color:white;
+  text-shadow: 5px 5px 20px rgba(255, 255, 255, 0.849);
+}
+
+#home .box--decription .button {
+  position: relative;
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  background: #b8a4c9;
+  padding: 10px 30px;
+  border-radius: 30px;
+  transition: 0.5s;
+  font-family: 'Pacifico';
+}
+
+#home .box--decription .button:hover {
+  border-radius: 15px;
+}
+
